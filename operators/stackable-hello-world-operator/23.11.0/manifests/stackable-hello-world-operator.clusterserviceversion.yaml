@@ -220,7 +220,7 @@ spec:
                   app.kubernetes.io/name: hello-world-operator
                   app.kubernetes.io/instance: hello-world-operator
               spec:
-                serviceAccountName: hello-world-operator-hello-operator-serviceaccount
+                serviceAccountName: hello-world-operator
                 securityContext: {}
                 containers:
                   - name: hello-operator
