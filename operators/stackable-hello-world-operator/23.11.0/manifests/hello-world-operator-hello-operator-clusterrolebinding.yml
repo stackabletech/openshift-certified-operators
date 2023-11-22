@@ -1,0 +1,21 @@
+---
+# Source: hello-world-operator/templates/serviceaccount.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+# This cluster role binding allows anyone in the "manager" group to read secrets in any namespace.
+kind: ClusterRoleBinding
+metadata:
+  name: hello-world-operator-hello-operator-clusterrolebinding
+  labels:
+    helm.sh/chart: hello-world-operator-0.0.0-dev
+    app.kubernetes.io/name: hello-operator
+    app.kubernetes.io/instance: hello-world-operator
+    app.kubernetes.io/version: "0.0.0-dev"
+    app.kubernetes.io/managed-by: Helm
+subjects:
+  - kind: ServiceAccount
+    name: hello-world-operator-hello-operator-serviceaccount
+    namespace: default
+roleRef:
+  kind: ClusterRole
+  name: hello-world-operator-hello-operator-clusterrole
+  apiGroup: rbac.authorization.k8s.io

@@ -1,0 +1,72 @@
+---
+# Source: hello-world-operator/templates/configmap.yaml
+apiVersion: v1
+data:
+  properties.yaml: |
+    version: 0.1.0
+    spec:
+      units:
+        - unit: &unitUri
+            name: "uri"
+            regex: "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?"
+            examples:
+              - "ldap://[2001:db8::7]/c=GB?objectClass?one"
+            comment: "Specified in https://tools.ietf.org/html/rfc3986#appendix-B"
+        - unit: &unitDirectory
+            name: "directory"
+            regex: "^/|(/[\\w-]+)+$"
+            examples:
+              - "/tmp/xyz"
+        - unit: &unitClassName
+            name: "classname"
+            regex: "([a-zA-Z_$][a-zA-Z\\d_$]*\\.)*[a-zA-Z_$][a-zA-Z\\d_$]*"
+            examples:
+              - "org.apache.derby.jdbc.EmbeddedDriver"
+
+    properties:
+      - property: &jvmDnsCacheTtl
+          propertyNames:
+            - name: "networkaddress.cache.ttl"
+              kind:
+                type: "file"
+                file: "security.properties"
+          datatype:
+            type: "integer"
+            min: "0"
+          recommendedValues:
+            - fromVersion: "0.0.0"
+              value: "30"
+          roles:
+            - name: "server"
+              required: true
+          asOfVersion: "0.0.0"
+          comment: "TTL for successfully resolved domain names."
+          description: "TTL for successfully resolved domain names."
+
+      - property: &jvmDnsCacheNegativeTtl
+          propertyNames:
+            - name: "networkaddress.cache.negative.ttl"
+              kind:
+                type: "file"
+                file: "security.properties"
+          datatype:
+            type: "integer"
+            min: "0"
+          recommendedValues:
+            - fromVersion: "0.0.0"
+              value: "0"
+          roles:
+            - name: "server"
+              required: true
+          asOfVersion: "0.0.0"
+          comment: "TTL for domain names that cannot be resolved."
+          description: "TTL for domain names that cannot be resolved."
+kind: ConfigMap
+metadata:
+  name: hello-world-operator-hello-operator-configmap
+  labels:
+    helm.sh/chart: hello-world-operator-0.0.0-dev
+    app.kubernetes.io/name: hello-operator
+    app.kubernetes.io/instance: hello-world-operator
+    app.kubernetes.io/version: "0.0.0-dev"
+    app.kubernetes.io/managed-by: Helm
