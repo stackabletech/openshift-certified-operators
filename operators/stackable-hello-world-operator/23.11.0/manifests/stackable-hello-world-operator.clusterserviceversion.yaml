@@ -32,7 +32,7 @@ spec:
   provider:
     name: Stackable GmbH
     url: https://stackable.tech
-  version: 23.11
+  version: 23.11.0
   minKubeVersion: 1.23.0
 
   installModes:
