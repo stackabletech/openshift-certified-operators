@@ -2,7 +2,7 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: ClusterServiceVersion
 metadata:
-  name: hello-world-operator.v23.11
+  name: hello-world-operator.v23.11.0
 spec:
   annotations:
     support: stackable.tech
