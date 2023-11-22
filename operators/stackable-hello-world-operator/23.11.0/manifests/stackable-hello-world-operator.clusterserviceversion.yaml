@@ -212,12 +212,12 @@ spec:
               type: Recreate
             selector:
               matchLabels:
-                app.kubernetes.io/name: hello-operator
+                app.kubernetes.io/name: hello-world-operator
                 app.kubernetes.io/instance: hello-world-operator
             template:
               metadata:
                 labels:
-                  app.kubernetes.io/name: hello-operator
+                  app.kubernetes.io/name: hello-world-operator
                   app.kubernetes.io/instance: hello-world-operator
               spec:
                 serviceAccountName: hello-world-operator-hello-operator-serviceaccount
