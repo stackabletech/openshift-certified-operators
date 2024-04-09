@@ -10,7 +10,7 @@ metadata:
     capabilities: Full Lifecycle
     description: Stackable Operator for Apache Hive
     repository: https://github.com/stackabletech/hive-operator
-    containerImage: docker.stackable.tech/stackable-experimental/hive-operator@sha:e17a7ab079312ef57006c274cf1f6673f75785c3d85c976d96c7d879d759d624
+    containerImage: docker.stackable.tech/stackable-experimental/hive-operator:24.3.0
     features.operators.openshift.io/disconnected: "false"
     features.operators.openshift.io/fips-compliant: "false"
     features.operators.openshift.io/proxy-aware: "true"
@@ -75,7 +75,7 @@ spec:
 
   relatedImages:
     - name: hive-operator
-      image: docker.stackable.tech/stackable-experimental/hive-operator@sha:e17a7ab079312ef57006c274cf1f6673f75785c3d85c976d96c7d879d759d624
+      image: docker.stackable.tech/stackable-experimental/hive-operator:24.3.0
   install:
     # strategy indicates what type of deployment artifacts are used
     strategy: deployment
@@ -223,7 +223,7 @@ spec:
             template:
               metadata:
                 annotations:
-                  internal.stackable.tech/image: docker.stackable.tech/stackable-experimental/hive-operator@sha:e17a7ab079312ef57006c274cf1f6673f75785c3d85c976d96c7d879d759d624
+                  internal.stackable.tech/image: docker.stackable.tech/stackable-experimental/hive-operator:24.3.0
                 labels:
                   app.kubernetes.io/name: hive-operator
                   app.kubernetes.io/instance: hive-operator
@@ -234,7 +234,7 @@ spec:
                 containers:
                   - name: hive-operator
                     securityContext: {}
-                    image: docker.stackable.tech/stackable-experimental/hive-operator@sha:e17a7ab079312ef57006c274cf1f6673f75785c3d85c976d96c7d879d759d624
+                    image: docker.stackable.tech/stackable-experimental/hive-operator:24.3.0
                     imagePullPolicy: IfNotPresent
                     resources:
                       limits:
