@@ -1,0 +1,33 @@
+apiVersion: v1
+data:
+  properties.yaml: "version: 0.1.0\nspec:\n  units:\n    - unit: &unitUri\n      \
+    \  name: \"uri\"\n        regex: \"^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\\\\
+    ?([^#]*))?(#(.*))?\"\n        examples:\n          - \"ldap://[2001:db8::7]/c=GB?objectClass?one\"\
+    \n        comment: \"Specified in https://tools.ietf.org/html/rfc3986#appendix-B\"\
+    \n    - unit: &unitDirectory\n        name: \"directory\"\n        regex: \"^/|(/[\\\
+    \\w-]+)+$\"\n        examples:\n          - \"/tmp/xyz\"\n    - unit: &unitClassName\n\
+    \        name: \"classname\"\n        regex: \"([a-zA-Z_$][a-zA-Z\\\\d_$]*\\\\\
+    .)*[a-zA-Z_$][a-zA-Z\\\\d_$]*\"\n        examples:\n          - \"org.apache.derby.jdbc.EmbeddedDriver\"\
+    \n\nproperties:\n  - property: &jvmDnsCacheTtl\n      propertyNames:\n       \
+    \ - name: \"networkaddress.cache.ttl\"\n          kind:\n            type: \"\
+    file\"\n            file: \"security.properties\"\n      datatype:\n        type:\
+    \ \"integer\"\n        min: \"0\"\n      recommendedValues:\n        - fromVersion:\
+    \ \"0.0.0\"\n          value: \"30\"\n      roles:\n        - name: \"server\"\
+    \n          required: true\n      asOfVersion: \"0.0.0\"\n      comment: \"TTL\
+    \ for successfully resolved domain names.\"\n      description: \"TTL for successfully\
+    \ resolved domain names.\"\n\n  - property: &jvmDnsCacheNegativeTtl\n      propertyNames:\n\
+    \        - name: \"networkaddress.cache.negative.ttl\"\n          kind:\n    \
+    \        type: \"file\"\n            file: \"security.properties\"\n      datatype:\n\
+    \        type: \"integer\"\n        min: \"0\"\n      recommendedValues:\n   \
+    \     - fromVersion: \"0.0.0\"\n          value: \"0\"\n      roles:\n       \
+    \ - name: \"server\"\n          required: true\n      asOfVersion: \"0.0.0\"\n\
+    \      comment: \"TTL for domain names that cannot be resolved.\"\n      description:\
+    \ \"TTL for domain names that cannot be resolved.\"\n"
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/instance: hello-world-operator
+    app.kubernetes.io/name: hello-world-operator
+    app.kubernetes.io/version: 24.7.0
+    stackable.tech/vendor: Stackable
+  name: hello-world-operator-configmap
