@@ -250,6 +250,6 @@ spec:
   relatedImages:
   - image: quay.io/stackable/hdfs-operator@sha256:db15d7f14c35b4d3a12f2643f0c99f7fa333c18589780aea4ddb876d535797fe
     name: hdfs-operator
-  replaces: null
+  replaces: hdfs-operator.v24.4.0-1
   skips: []
   version: 24.7.0
