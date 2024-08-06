@@ -230,6 +230,6 @@ spec:
   relatedImages:
   - image: quay.io/stackable/airflow-operator@sha256:10b653fb804881f947674e170de6affeb50a7f7fb0bfde962a1ea37a3bdb1833
     name: airflow-operator
-  replaces: null
+  replaces: airflow-operator.v24.4.0-1
   skips: []
   version: 24.7.0
