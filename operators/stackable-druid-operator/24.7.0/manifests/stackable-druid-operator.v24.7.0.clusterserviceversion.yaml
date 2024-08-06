@@ -239,6 +239,6 @@ spec:
   relatedImages:
   - image: quay.io/stackable/druid-operator@sha256:bf5a3aad181d229fb2bbfcc3d7b10120939a0dfa09ba75c0c70816cbcf9396d7
     name: druid-operator
-  replaces: null
+  replaces: druid-operator.v24.4.0-1
   skips: []
   version: 24.7.0
