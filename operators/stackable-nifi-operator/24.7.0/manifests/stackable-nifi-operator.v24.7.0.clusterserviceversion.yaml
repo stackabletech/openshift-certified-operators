@@ -230,6 +230,6 @@ spec:
   relatedImages:
   - image: quay.io/stackable/nifi-operator@sha256:712b4a1bf73ea8ed09b960496839682010beacdf6909bc86ae262802d2b3f264
     name: nifi-operator
-  replaces: null
+  replaces: nifi-operator.v24.4.0-1
   skips: []
   version: 24.7.0
