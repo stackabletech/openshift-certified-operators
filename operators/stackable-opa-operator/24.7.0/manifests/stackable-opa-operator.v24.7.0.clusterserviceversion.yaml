@@ -211,6 +211,6 @@ spec:
   relatedImages:
   - image: quay.io/stackable/opa-operator@sha256:0387dd40d0c35183bb85dfa17317ea67a287a1452a9f0f62e872375f0f952c51
     name: opa-operator
-  replaces: null
+  replaces: opa-operator.v24.4.0-1
   skips: []
   version: 24.7.0
