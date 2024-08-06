@@ -157,6 +157,6 @@ spec:
   relatedImages:
   - image: quay.io/stackable/commons-operator@sha256:dd709ea2d649568dd55f85ca8c9c79170964c1d7f818b686ebf1af02b3adeabd
     name: commons-operator
-  replaces: null
+  replaces: commons-operator.v24.4.0-1
   skips: []
   version: 24.7.0
