@@ -243,6 +243,6 @@ spec:
   relatedImages:
   - image: quay.io/stackable/spark-k8s-operator@sha256:80109d8651b07f5ba5b015f90e58b08b7da76035668e25a06ed3e58a76cdb96a
     name: spark-k8s-operator
-  replaces: null
+  replaces: spark-operator.v24.4.0-1
   skips: []
   version: 24.7.0
