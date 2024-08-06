@@ -232,6 +232,6 @@ spec:
   relatedImages:
   - image: quay.io/stackable/kafka-operator@sha256:c86ef75d6e061e14330321ad19467a9d8cd8bc2b515fc9836f7fe86535929782
     name: kafka-operator
-  replaces: null
+  replaces: kafka-operator.v24.4.0-1
   skips: []
   version: 24.7.0
