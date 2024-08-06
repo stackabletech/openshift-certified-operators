@@ -237,6 +237,6 @@ spec:
   relatedImages:
   - image: quay.io/stackable/zookeeper-operator@sha256:089e46040941761fe29bd1e60f27c1dbecd39431352cccdfc1e03b62289127cd
     name: zookeeper-operator
-  replaces: null
+  replaces: zookeeper-operator.v24.4.0-1
   skips: []
   version: 24.7.0
