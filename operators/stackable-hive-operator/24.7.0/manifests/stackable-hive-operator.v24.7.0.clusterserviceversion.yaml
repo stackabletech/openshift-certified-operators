@@ -230,6 +230,6 @@ spec:
   relatedImages:
   - image: quay.io/stackable/hive-operator@sha256:cfa30e8ff1e2dd7f2e7d207b0044589dc98ca9f7300b8f9da5db4ef6704b68af
     name: hive-operator
-  replaces: null
+  replaces: hive-operator.v24.4.0-1
   skips: []
   version: 24.7.0
