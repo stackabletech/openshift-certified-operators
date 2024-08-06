@@ -209,6 +209,6 @@ spec:
   relatedImages:
   - image: quay.io/stackable/hbase-operator@sha256:f33617f451a99caed42376a1bd84dff56ed94db7f23e51587ec8a35a78a0c7f6
     name: hbase-operator
-  replaces: null
+  replaces: hbase-operator.v24.4.0-1
   skips: []
   version: 24.7.0
