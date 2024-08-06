@@ -45,8 +45,7 @@ spec:
     name: Stackable GmbH
     url: https://stackable.tech
   version: 24.7.0
-  skips:
-  - listener-operator.v24.3.0
+  replaces: listener-operator.v24.4.0-1
   minKubeVersion: 1.23.0
 
   installModes:
