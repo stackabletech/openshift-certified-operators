@@ -267,6 +267,6 @@ spec:
   relatedImages:
   - image: quay.io/stackable/trino-operator@sha256:3b0089b44f9f951fff1c407f388786c1755cc4e2da93c6bc7107e40a8b8cd104
     name: trino-operator
-  replaces: null
+  replaces: trino-operator.v24.4.0-1
   skips: []
   version: 24.7.0
