@@ -14,10 +14,10 @@ metadata:
     features.operators.openshift.io/token-auth-azure: 'false'
     features.operators.openshift.io/token-auth-gcp: 'false'
     olm.properties: '[]'
+    olm.skipRange: < 24.7.0
     operatorframework.io/suggested-namespace: stackable-operators
     repository: https://github.com/stackabletech/commons-operator
     support: stackable.tech
-    olm.skipRange: '< 24.7.0'
   name: commons-operator.v24.7.0
 spec:
   customresourcedefinitions:
@@ -158,6 +158,6 @@ spec:
   relatedImages:
   - image: quay.io/stackable/commons-operator@sha256:dd709ea2d649568dd55f85ca8c9c79170964c1d7f818b686ebf1af02b3adeabd
     name: commons-operator
-  replaces: commons-operator.v24.4.0-1
+  replaces: null
   skips: []
   version: 24.7.0
