@@ -15,6 +15,12 @@ data:
     -o name | head -n 1 | sed 's/^.*\///')
     export LISTENER_OPERATOR_CLUSTERROLE_UID=$(kubectl get clusterrole $LISTENER_OPERATOR_CLUSTERROLE_NAME -o go-template='{{.metadata.uid}}')
 
+    #
+    # Patch the daemonset manifest with any tolerations from the subscription.
+    #
+    SUBSCRIPTION_TOLERATIONS=$(kubectl get deployment secret-operator-deployer -o jsonpath='{.spec.template.spec.tolerations}')
+    export SUBSCRIPTION_TOLERATIONS="$SUBSCRIPTION_TOLERATIONS"
+
     for file in /manifests/*.yaml; do
       echo Deploying $file
       cat $file | envsubst | ./kubectl apply --wait -f -
@@ -150,6 +156,7 @@ data:
             - name: mountpoint
               hostPath:
                 path: /var/lib/kubelet/pods/
+          tolerations: $SUBSCRIPTION_TOLERATIONS
   cluster-internal.yaml: |
     ---
     apiVersion: listeners.stackable.tech/v1alpha1
