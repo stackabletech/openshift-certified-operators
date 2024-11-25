@@ -245,6 +245,4 @@ spec:
   relatedImages:
   - image: quay.io/stackable/superset-operator@sha256:699b1b947552f6f12f1d1936314ffa39e88813b47f3e74ec9bdca730ad21e09e
     name: superset-operator
-  replaces: null
-  skips: []
   version: 24.11.0
